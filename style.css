@@ -1,0 +1,124 @@
+
+
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at center, #1b2735 0%, #05070a 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    
+}
+h1 h2 h3 {
+    font-size: 1.8rem; /* Diminuído de ~3rem para 1.8rem */
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+     }
+
+     .conteudo p {
+    font-size: 0.9rem; /* Tamanho menor e mais discreto */
+    color: rgba(255, 255, 255, 0.7); /* Um tom levemente cinza dá elegância */
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Opcional: dá um ar mais moderno */
+    letter-spacing: 2px;
+}
+
+/* Ajuste para os ícones */
+.links {
+    font-size: 1.5rem;
+    
+    }
+
+/* Efeito de luz que segue o mouse */
+.cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(100, 150, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.conteudo {
+    text-align: center;
+    z-index: 1;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    background: url(img/Alex.jpeg) center/cover no-repeat;                                              
+    background-size: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.links a {
+    color: #88aaff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    color: white;
+    text-shadow: 0 0 10px white;
+}
+
+.estrela {
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: cadente 3s linear infinite;
+}
+
+@keyframes cadente {
+    0% { transform: translateX(-100vw) translateY(-100vh) rotate(45deg); opacity: 0; }
+    10% { opacity: 1; }
+    20% { opacity: 0; }
+    100% { transform: translateX(100vw) translateY(100vh) rotate(45deg); }
+}
+
+
+.links a {
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.links {
+    margin-top: 20px;
+    font-size: 2rem; /* Tamanho dos ícones */
+}
+
+.links a {
+    color: #ffffff;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.links a:hover {
+    color: #00d4ff;
+    transform: scale(1.3) translateY(-5px);
+    text-shadow: 0 0 15px #00d4ff;
+}
+
+.subtitulo {
+    font-size: 0.85rem; /* Ajuste fino para ficar menor */
+    color: rgba(255, 255, 255, 0.6); /* Cor levemente atenuada */
+    letter-spacing: 1.5px; /* Espaçamento para elegância */
+    margin-bottom: 25px;
+    font-family: 'Shippori Mincho', serif; /* Aplicando a fonte que você escolheu */
+}
