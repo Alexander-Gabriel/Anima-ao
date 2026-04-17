@@ -1,124 +1,312 @@
+* style.css */
 
-
+/* Reset e Configurações Globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    margin: 0;
-    background: radial-gradient(circle at center, #1b2735 0%, #05070a 100%);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    
-}
-h1 h2 h3 {
-    font-size: 1.8rem; /* Diminuído de ~3rem para 1.8rem */
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-     }
-
-     .conteudo p {
-    font-size: 0.9rem; /* Tamanho menor e mais discreto */
-    color: rgba(255, 255, 255, 0.7); /* Um tom levemente cinza dá elegância */
-    margin-bottom: 20px;
-    text-transform: uppercase; /* Opcional: dá um ar mais moderno */
-    letter-spacing: 2px;
+  background: radial-gradient(circle at center, #1b2735 0%, #05070a 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Questrial", sans-serif; /* Fonte limpa */
+  overflow-y: auto; /* Permite rolagem se o conteúdo crescer */
+  padding: 20px;
 }
 
-/* Ajuste para os ícones */
-.links {
-    font-size: 1.5rem;
-    
-    }
+/* Tipografia Refinada */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
 
-/* Efeito de luz que segue o mouse */
+h3 {
+  font-family: "Shippori Mincho", serif; /* Fonte elegante */
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.subtitulo {
+  font-size: 0.95rem;
+  color: #00d4ff; /* Cor de destaque */
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  font-weight: 300;
+  font-family: "Shippori Mincho", serif;
+}
+
+/* Caixa Sobre Mim */
+.sobre-caixa {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.descricao {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+/* Efeito de luz do mouse */
 .cursor-glow {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(100, 150, 255, 0.15) 0%, transparent 70%);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(100, 150, 255, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .conteudo {
-    text-align: center;
-    z-index: 1;
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+  max-width: 800px;
 }
 
+/* Foto de Perfil */
 .foto-perfil {
-    width: 150px;
-    height: 150px;
-    background: url(img/Alex.jpeg) center/cover no-repeat;                                              
-    background-size: cover;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 150px;
+  height: 150px;
+  background: url("img/Alex.jpeg") center/cover no-repeat;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease;
 }
 
-.links a {
-    color: #88aaff;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: 0.3s;
+.foto-perfil:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.4);
 }
 
-.links a:hover {
-    color: white;
-    text-shadow: 0 0 10px white;
+/* Seção de Contato e Ícones */
+.contato-secao h3 {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.estrela {
-    position: absolute;
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, white, transparent);
-    animation: cadente 3s linear infinite;
-}
-
-@keyframes cadente {
-    0% { transform: translateX(-100vw) translateY(-100vh) rotate(45deg); opacity: 0; }
-    10% { opacity: 1; }
-    20% { opacity: 0; }
-    100% { transform: translateX(100vw) translateY(100vh) rotate(45deg); }
-}
-
-
-.links a {
-    animation: flutuar 3s ease-in-out infinite;
-}
-
-@keyframes flutuar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
 .links {
-    margin-top: 20px;
-    font-size: 2rem; /* Tamanho dos ícones */
+  font-size: 2.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
 }
 
 .links a {
-    color: #ffffff;
-    margin: 0 15px;
-    transition: all 0.3s ease;
-    display: inline-block;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 /* Efeito de brilho ao passar o mouse */
 .links a:hover {
-    color: #00d4ff;
-    transform: scale(1.3) translateY(-5px);
-    text-shadow: 0 0 15px #00d4ff;
+  color: #00d4ff;
+  transform: scale(1.2) translateY(-5px);
+  text-shadow: 0 0 15px #00d4ff;
 }
 
-.subtitulo {
-    font-size: 0.85rem; /* Ajuste fino para ficar menor */
-    color: rgba(255, 255, 255, 0.6); /* Cor levemente atenuada */
-    letter-spacing: 1.5px; /* Espaçamento para elegância */
-    margin-bottom: 25px;
-    font-family: 'Shippori Mincho', serif; /* Aplicando a fonte que você escolheu */
+/* Estrelas Cadentes */
+#estrelas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.estrela {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(100deg, white, transparent);
+  animation: cadente 4s linear infinite;
+  opacity: 0;
+}
+
+@keyframes cadente {
+  0% {
+    transform: translateX(-100vw) translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100vw) translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* ============================== */
+/* O FOGUETE            */
+/* ============================== */
+
+#foguete-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5; /* Atrás do conteúdo, mas na frente das estrelas */
+}
+
+.foguete {
+  position: absolute;
+  bottom: -100px; /* Começa abaixo da tela */
+  font-size: 3rem; /* Tamanho do ícone */
+  color: rgba(255, 255, 255, 0.6); /* Transparente para não distrair */
+  animation: decolagem 10s linear; /* Uma decolagem longa e gradual */
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.5); /* Brilho de decolagem */
+}
+
+/* O rastro de fogo */
+.foguete::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 40px;
+  background: linear-gradient(to bottom, #ff9f43, #ff6b6b, transparent);
+  border-radius: 5px;
+  opacity: 0.7;
+  animation: rastro 0.2s linear infinite alternate;
+}
+
+/* Animação de Subida (Decolagem) */
+@keyframes decolagem {
+  0% {
+    bottom: -100px; /* Começa abaixo */
+    opacity: 0.1;
+  }
+  10% {
+    opacity: 1; /* Aparece */
+  }
+  90% {
+    opacity: 1; /* Continua subindo */
+  }
+  100% {
+    bottom: 120vh; /* Sobe até passar do topo */
+    opacity: 0; /* Some */
+  }
+}
+
+/* Animação simples de oscilação do rastro */
+@keyframes rastro {
+  0% {
+    height: 35px;
+    opacity: 0.6;
+  }
+  100% {
+    height: 45px;
+    opacity: 0.8;
+  }
+}
+
+/* Container das estrelas */
+#estrelas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* Fica atrás de tudo */
+  overflow: hidden;
+}
+
+.estrela {
+  position: absolute;
+  width: 120px; /* Aumentei um pouco o tamanho do rastro */
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  filter: drop-shadow(0 0 5px white); /* Adiciona um brilho real */
+  animation: cadente linear forwards;
+  opacity: 0;
+}
+
+@keyframes cadente {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    scale: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(800px) translateY(800px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Animação de flutuação */
+@keyframes flutuarOnda {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* Altura da onda */
+  }
+}
+
+.links a {
+  display: inline-block; /* Necessário para a animação de transform funcionar */
+  animation: flutuarOnda 3s ease-in-out infinite;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+}
+
+/* Aplicando o efeito de "Onda" com Delays diferentes */
+.links a:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.links a:nth-child(2) {
+  animation-delay: 0.5s; /* Começa meio segundo depois */
+}
+
+.links a:nth-child(3) {
+  animation-delay: 1s; /* Começa um segundo depois */
+}
+
+/* Efeito de Hover (para quando você passar o mouse) */
+.links a:hover {
+  color: #00d4ff;
+  transform: scale(1.2) !important; /* Aumenta um pouco ao focar */
+  text-shadow: 0 0 20px #00d4ff;
+  animation-play-state: paused; /* Para de flutuar quando o mouse está em cima */
 }
